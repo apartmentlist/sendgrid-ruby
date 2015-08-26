@@ -134,7 +134,7 @@ module SendGrid
       payload[:to] = payload[:from] unless (not payload[:to].nil?) && smtpapi.to.empty?
 
       return payload if attachments.empty?
-      
+
       attachments.each do |file|
         payload[:files][file[:name]] = file[:file]
       end
